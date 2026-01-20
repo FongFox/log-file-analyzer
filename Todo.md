@@ -46,11 +46,26 @@ README.md
 - [x] Viết toString()
 
 ### 2.2 Viết Regex để parse log4j format
-- [ ] Tìm hiểu pattern: `%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n`
-- [ ] Viết regex cần capture: time, thread, level, logger, message
-- [ ] Test regex với 1 dòng log mẫu
+- [x] Tìm hiểu pattern: `%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n`
+- [x] Viết regex cần capture: time, thread, level, logger, message
+- [x] Test regex với 1 dòng log mẫu
 
 **Câu hỏi:** Bạn đã biết cách viết regex groups `()` chưa? Làm sao để extract data từ regex groups trong Java?
+
+**Note**:
+
+- Regex syntax:
+
+```bash
+"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}) \[([^]]+)\] (\w+)\s+(\w+) - (.*)"gm
+```
+
+- Example:
+
+```bash
+2026-01-20 12:40:01.123 [main] INFO  AppStarter - Starting OrderServiceApplication v2.4.0 on localhost
+2026-01-20 12:42:45.880 [http-nio-8080-exec-4] ERROR OrderController - Unexpected error while fetching order history
+```
 
 ### 2.3 Implement `LogParser.parseLine(String line)`
 - [ ] Method nhận input: 1 dòng log string
