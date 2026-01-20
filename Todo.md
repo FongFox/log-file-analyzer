@@ -39,11 +39,11 @@ README.md
 ## PHASE 2: Parse Single Log Line (5-7 giờ)
 
 ### 2.1 Tạo class `LogEntry`
-- [ ] Class này chứa data của 1 dòng log
-- [ ] Xác định fields cần có (timestamp, level, thread, logger, message)
-- [ ] Viết Constructor
-- [ ] Viết getters
-- [ ] Viết toString()
+- [x] Class này chứa data của 1 dòng log
+- [x] Xác định fields cần có (timestamp, level, thread, logger, message)
+- [x] Viết Constructor
+- [x] Viết getters
+- [x] Viết toString()
 
 ### 2.2 Viết Regex để parse log4j format
 - [ ] Tìm hiểu pattern: `%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n`
