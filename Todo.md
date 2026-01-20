@@ -28,9 +28,9 @@ README.md
 - [x] Tạo các file Java rỗng
 
 ### 1.3 Tạo sample log file
-- [ ] Tạo file `sample.log` với ~100 dòng log4j 2.x format
-- [ ] Bao gồm mix của: DEBUG, INFO, WARN, ERROR, FATAL
-- [ ] Có thể tự viết hoặc search "log4j sample log file"
+- [x] Tạo file `sample.log` với ~100 dòng log4j 2.x format
+- [x] Bao gồm mix của: DEBUG, INFO, WARN, ERROR, FATAL
+- [x] Có thể tự viết hoặc search "log4j sample log file"
 
 **Câu hỏi checkpoint:** Bạn đã biết cách tạo Maven/Gradle project chưa? Hay cần gợi ý?
 
