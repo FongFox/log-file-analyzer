@@ -3,17 +3,17 @@
 ## PHASE 1: Setup & Basic Structure (3-5 giờ)
 
 ### 1.1 Setup project
-- [ ] Tạo Java project (Maven hoặc Gradle)
-- [ ] Setup Git repository
-- [ ] Tạo `.gitignore` cho Java
-- [ ] First commit
+- [x] Tạo Java project (Maven hoặc Gradle)
+- [x] Setup Git repository
+- [x] Tạo `.gitignore` cho Java
+- [x] First commit
 
 ### 1.2 Tạo cấu trúc thư mục cơ bản
 ```
 src/
   main/
     java/
-      [package của bạn]/
+      com/fongfox/
         Main.java
         LogParser.java
         LogEntry.java
@@ -24,8 +24,8 @@ resources/
   sample-logs/
 README.md
 ```
-- [ ] Tạo các thư mục theo cấu trúc trên
-- [ ] Tạo các file Java rỗng
+- [x] Tạo các thư mục theo cấu trúc trên
+- [x] Tạo các file Java rỗng
 
 ### 1.3 Tạo sample log file
 - [ ] Tạo file `sample.log` với ~100 dòng log4j 2.x format
