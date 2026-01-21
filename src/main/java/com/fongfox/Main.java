@@ -3,15 +3,25 @@ package com.fongfox;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    public static void main(String[] args) {
+        LogParser parser = new LogParser();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        // String testLog = "2026-01-20 12:40:01.123 [main] INFO  AppStarter - Starting OrderServiceApplication v2.4.0 on localhost";
+        // LogEntry entry = parser.parseLine(testLog);
+        // System.out.println(entry);  // Nhờ @ToString sẽ in ra thông tin
+
+        String[] testLogs = {
+                "2026-01-20 12:40:01.123 [main] INFO  AppStarter - Starting OrderServiceApplication v2.4.0 on localhost",
+                "2026-01-20 12:42:45.880 [http-nio-8080-exec-4] ERROR OrderController - Unexpected error while fetching order history",
+                "2026-01-20 12:40:10.050 [http-nio-8080-exec-1] DEBUG UserAuthService - Validating credentials against LDAP provider...",
+                "2026-01-20 12:40:16.120 [http-nio-8080-exec-2] WARN  PaymentProcessor - Payment gateway response delayed (1670ms). Retrying...",
+                "Invalid log line"  // Test dòng lỗi format
+        };
+
+        for (String log : testLogs) {
+            LogEntry entry = parser.parseLine(log);
+            System.out.println(entry);
+            System.out.println("---");
         }
     }
 }
