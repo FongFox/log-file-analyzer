@@ -68,9 +68,9 @@ README.md
 ```
 
 ### 2.3 Implement `LogParser.parseLine(String line)`
-- [ ] Method nhận input: 1 dòng log string
-- [ ] Method return: LogEntry object (hoặc null nếu parse failed)
-- [ ] Handle invalid lines gracefully
+- [x] Method nhận input: 1 dòng log string
+- [x] Method return: LogEntry object (hoặc null nếu parse failed)
+- [x] Handle invalid lines gracefully
 
 ### 2.4 Write unit tests
 - [ ] Test với valid log line
