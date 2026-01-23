@@ -99,13 +99,13 @@ README.md
 
 - [x] Test với file lớn (tạo file 100MB+)
 - [x] Ensure không bị OutOfMemoryError
-- [ ] Đo thời gian xử lý
+- [x] Đo thời gian xử lý
 
 ### 3.3 Error handling
 
 - [x] Handle file không tồn tại
 - [x] Quyết định: skip dòng lỗi hay stop?
-- [ ] Log ra bao nhiêu dòng failed
+- [x] Log ra bao nhiêu dòng failed
 
 **Câu hỏi:** Bạn muốn tool stop khi gặp lỗi, hay skip dòng lỗi và tiếp tục?
 
