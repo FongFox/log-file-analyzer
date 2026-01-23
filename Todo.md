@@ -115,8 +115,8 @@ README.md
 
 ### 4.1 Tạo class `LogAnalyzer`
 
-- [ ] Input: `List<LogEntry>`
-- [ ] Method: `countByLevel()` - đếm số lượng mỗi log level
+- [x] Input: `List<LogEntry>`
+- [x] Method: `countByLevel()` - đếm số lượng mỗi log level
 - [ ] Method: `findErrors()` - filter chỉ ERROR + FATAL
 - [ ] Method: `getTimeRange()` - earliest & latest timestamp
 - [ ] Brainstorm thêm methods khác (optional)
@@ -129,8 +129,12 @@ README.md
 
 ### 4.2 Implement analysis methods
 
-- [ ] Mỗi method return data structure phù hợp
-- [ ] Example: `Map<LogLevel, Integer>` cho countByLevel()
+- [x] countByLevel() returns Map<LogLevel, Long>
+- [ ] findErrors() implementation
+- [ ] getTimeRange() implementation
+- Mỗi method return data structure phù hợp
+
+**Example:** `Map<LogLevel, Integer>` cho countByLevel()
 
 ### 4.3 Test analysis logic
 
