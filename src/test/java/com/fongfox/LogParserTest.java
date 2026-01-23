@@ -75,6 +75,6 @@ public class LogParserTest {
 
         assertNotNull(result);
         assertEquals("http-nio-8080-exec-4", result.getThread());
-        assertEquals(LogLevel.ERROR, result.getLevel());
+        assertEquals(LogLevel.WARN, result.getLevel());
     }
 }

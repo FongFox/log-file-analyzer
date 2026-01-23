@@ -1,27 +1,27 @@
 package com.fongfox;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        LogParser parser = new LogParser();
+        LogFileReader reader = new LogFileReader();
+        String logFilePath = "src/main/resources/sample-logs/sample.log";
 
-        // String testLog = "2026-01-20 12:40:01.123 [main] INFO  AppStarter - Starting OrderServiceApplication v2.4.0 on localhost";
-        // LogEntry entry = parser.parseLine(testLog);
-        // System.out.println(entry);  // Nhờ @ToString sẽ in ra thông tin
+        try {
+            System.out.println("Reading log file: " + logFilePath);
+            List<LogEntry> entries = reader.readLogFile(logFilePath);
 
-        String[] testLogs = {
-                "2026-01-20 12:40:01.123 [main] INFO  AppStarter - Starting OrderServiceApplication v2.4.0 on localhost",
-                "2026-01-20 12:42:45.880 [http-nio-8080-exec-4] ERROR OrderController - Unexpected error while fetching order history",
-                "2026-01-20 12:40:10.050 [http-nio-8080-exec-1] DEBUG UserAuthService - Validating credentials against LDAP provider...",
-                "2026-01-20 12:40:16.120 [http-nio-8080-exec-2] WARN  PaymentProcessor - Payment gateway response delayed (1670ms). Retrying...",
-                "Invalid log line"  // Test dòng lỗi format
-        };
+            System.out.println("Successfully read " + entries.size() + " valid log entries.");
+            System.out.println("--- First 5 entries ---");
 
-        for (String log : testLogs) {
-            LogEntry entry = parser.parseLine(log);
-            System.out.println(entry);
-            System.out.println("---");
+            for (int i = 0; i < 5 && i < entries.size(); i++) {
+                System.out.println(entries.get(i));
+            }
+
+        } catch (LogAnalyzerException e) {
+            System.err.println("Error processing log file: " + e.getMessage());
+            e.printStackTrace();
+            System.exit(1);
         }
     }
 }
