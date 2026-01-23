@@ -91,20 +91,20 @@ README.md
 
 ### 3.1 Implement file reading
 
-- [ ] Dùng `Files.lines()` hoặc `BufferedReader`
-- [ ] Đọc từng dòng và parse
-- [ ] Lưu kết quả vào `List<LogEntry>`
+- [x] Dùng `Files.lines()` hoặc `BufferedReader`
+- [x] Đọc từng dòng và parse
+- [x] Lưu kết quả vào `List<LogEntry>`
 
 ### 3.2 Handle large files
 
-- [ ] Test với file lớn (tạo file 100MB+)
-- [ ] Ensure không bị OutOfMemoryError
+- [x] Test với file lớn (tạo file 100MB+)
+- [x] Ensure không bị OutOfMemoryError
 - [ ] Đo thời gian xử lý
 
 ### 3.3 Error handling
 
-- [ ] Handle file không tồn tại
-- [ ] Quyết định: skip dòng lỗi hay stop?
+- [x] Handle file không tồn tại
+- [x] Quyết định: skip dòng lỗi hay stop?
 - [ ] Log ra bao nhiêu dòng failed
 
 **Câu hỏi:** Bạn muốn tool stop khi gặp lỗi, hay skip dòng lỗi và tiếp tục?
