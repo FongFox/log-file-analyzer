@@ -79,22 +79,38 @@ gradle build
 **Run the analyzer:**
 
 ```bash
-# Basic usage
-java -jar target/log-analyzer.jar <path-to-log-file>
+# Run with default settings (Console output)
+./gradlew run --args="src/main/resources/sample-logs/sample.log"
 
-# With options
-java -jar target/log-analyzer.jar <path-to-log-file> --output json
-java -jar target/log-analyzer.jar <path-to-log-file> --level ERROR
+# Run with specific level filtering and JSON output
+./gradlew run --args="src/main/resources/sample-logs/sample.log --level ERROR --output json"
+
+# Run with custom output file path
+./gradlew run --args="src/main/resources/sample-logs/sample.log --output text --file ./reports/my-analysis.txt"
 ```
 
 ### Example
 
 **Input file (sample.log):**
 
-```
-07:25:30.123 [main] INFO com.example.MyApp - Application started
-07:25:31.456 [main] WARN com.example.MyApp - Low memory warning
-07:25:32.789 [worker-1] ERROR com.example.MyApp - Connection failed
+```bash
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module 
+(file:/C:/Users/Phong%20Tran/.gradle/wrapper/dists/gradle-9.2.0-bin/11i5gvueggl8a5cioxuftxrik/gradle-9.2.0/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+> Task :run
+=== Parse Statistics ===
+Total lines read: 125
+Valid entries: 109
+Invalid lines skipped: 16
+Processing time: 20ms
+Filtered entries for level: ERROR. Remaining: 6
+JSON report written to D:\Desktop\log-file-analyzer\src\main\resources\output\json\report.json
+
+BUILD SUCCESSFUL in 791ms
+3 actionable tasks: 1 executed, 2 up-to-date
 ```
 
 **Command:**
@@ -117,11 +133,13 @@ Time range: 07:25:30.123 - 07:25:32.789
 
 ### Command-line Options
 
-| Option              | Description                        | Example         |
-|---------------------|------------------------------------|-----------------|
-| `--output <format>` | Output format: console, text, json | `--output json` |
-| `--level <level>`   | Filter by log level                | `--level ERROR` |
-| `--help`            | Show usage instructions            | `--help`        |
+| Option              | Description                           | Default                         | Example                   |
+|---------------------|---------------------------------------|---------------------------------|---------------------------|
+| `<path>`            | Required: Path to the source log file | N/A                             | `app.log`                 |
+| `--output <format>` | Output format: console, text, json    | `console`                       | `--output json`           |
+| `--file <path>`     | Custom output path for text/json      | `src/main/resources/output/...` | `--file ./my-report.json` |
+| `--level <level>`   | Filter by severity: DEBUG, INFO, etc. | All levels                      | `--level ERROR`           |
+| `--help`            | Show usage instructions               | N/A                             | `--help`                  |
 
 ---
 
@@ -150,7 +168,7 @@ Time range: 07:25:30.123 - 07:25:32.789
 
 ## Project Structure
 
-```
+```bash
 log-file-analyzer/
 ├── gradle/
 │   ├── wrapper/
@@ -168,14 +186,22 @@ log-file-analyzer/
 │   │   │           ├── LogLevel.java
 │   │   │           ├── LogParser.java
 │   │   │           ├── Main.java
+│   │   │           ├── Report.java
+│   │   │           ├── Reporter.java
 │   │   │           └── TimeRange.java
 │   │   ├── resources/
+│   │       ├── output/
+│   │       │   ├── json/
+│   │       │   │   └── report.json
+│   │       │   ├── txt/
+│   │       │       └── report.txt
 │   │       ├── sample-logs/
 │   │           └── sample.log
 │   ├── test/
 │       ├── java/
 │       │   ├── com/
 │       │       ├── fongfox/
+│       │           ├── LogAnalyzerTest.java
 │       │           └── LogParserTest.java
 │       ├── resources/
 ├── README.md
@@ -184,6 +210,7 @@ log-file-analyzer/
 ├── gradlew
 ├── gradlew.bat
 └── settings.gradle.kts
+
 ```
 
 ---

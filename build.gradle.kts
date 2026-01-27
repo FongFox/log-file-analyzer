@@ -28,5 +28,5 @@ tasks.test {
 
 // --------- Application configuration ----------
 application {
-    mainClass.set("com.fongfox.Main")   // <‑‑ Main class
+    mainClass.set("com.fongfox.Main")
 }

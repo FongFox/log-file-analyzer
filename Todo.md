@@ -182,14 +182,14 @@ Time range: 07:00:00.000 - 18:30:45.123
 
 ### 6.1 Command line arguments
 
-- [ ] Parse input file path
-- [ ] Parse output format (console/text/json)
-- [ ] Parse options (ví dụ: `--level ERROR`)
+- [x] Parse input file path
+- [x] Parse output format (console/text/json)
+- [x] Parse options (ví dụ: `--level ERROR`)
 
 ### 6.2 Usage instructions
 
-- [ ] Print help message khi user gõi sai
-- [ ] Example format:
+- [x] Print help message khi user gõi sai
+- [x] Example format:
 
 ```
 Usage: java -jar log-analyzer.jar <log-file> [options]
