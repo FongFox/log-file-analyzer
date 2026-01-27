@@ -37,4 +37,14 @@ public class LogAnalyzer {
         return new TimeRange(earliest, latest);
     }
 
+    public Report createReport() {
+        TimeRange range;
+        try {
+            range = getTimeRange();
+        } catch (IllegalStateException e) {
+            range = null;
+        }
+
+        return new Report(logEntries.size(), countByLevel(), range);
+    }
 }

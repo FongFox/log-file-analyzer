@@ -1,0 +1,13 @@
+{
+  "totalLines": 109,
+  "levelCounts": {
+    "DEBUG": 17,
+    "ERROR": 6,
+    "INFO": 74,
+    "WARN": 12
+  },
+  "timeRange": {
+    "start": "2026-01-20T12:40:01.123",
+    "end": "2026-01-20T14:45:00.001"
+  }
+}

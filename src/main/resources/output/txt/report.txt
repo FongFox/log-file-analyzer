@@ -1,0 +1,7 @@
+=== Log Analysis Report ===
+Total lines: 109
+DEBUG: 17
+ERROR: 6
+INFO: 74
+WARN: 12
+Time range: 2026-01-20T12:40:01.123 - 2026-01-20T14:45:00.001

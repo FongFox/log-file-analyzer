@@ -147,9 +147,9 @@ README.md
 
 ### 5.1 Console output
 
-- [ ] Print analysis results ra console
-- [ ] Format đẹp, dễ đọc
-- [ ] Example format:
+- [x] Print analysis results ra console
+- [x] Format đẹp, dễ đọc
+- Example format:
 
 ```
 === Log Analysis Report ===
@@ -165,14 +165,14 @@ Time range: 07:00:00.000 - 18:30:45.123
 
 ### 5.2 Text file output
 
-- [ ] Ghi report vào `.txt` file
-- [ ] Same format như console
+- [x] Ghi report vào `.txt` file
+- [x] Same format như console
 
 ### 5.3 JSON output
 
-- [ ] Serialize analysis results thành JSON
-- [ ] Dùng library (Gson, Jackson) hoặc tự build JSON string
-- [ ] Ghi vào `.json` file
+- [x] Serialize analysis results thành JSON
+- [x] Dùng library (Gson, Jackson) hoặc tự build JSON string
+- [x] Ghi vào `.json` file
 
 **Câu hỏi:** Bạn đã dùng JSON library nào chưa? Muốn dùng library hay tự build?
 
